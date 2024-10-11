@@ -1,4 +1,4 @@
-[gd_scene load_steps=57 format=3 uid="uid://ci4cj8ocwjcb"]
+[gd_scene load_steps=61 format=3 uid="uid://ci4cj8ocwjcb"]
 
 [ext_resource type="Terrain3DStorage" uid="uid://d21o6dlcnqwju" path="res://Resource/TerrainResource.res" id="1_ulxvh"]
 [ext_resource type="Texture2D" uid="uid://sbjl58epg6ys" path="res://Resource/grass_albedo_height.png" id="2_w44t0"]
@@ -22,6 +22,8 @@
 [ext_resource type="Script" path="res://addons/proton_scatter/src/scatter_shape.gd" id="20_d3ws4"]
 [ext_resource type="Script" path="res://addons/proton_scatter/src/shapes/sphere_shape.gd" id="21_cqq77"]
 [ext_resource type="Script" path="res://free_look_camera.gd" id="22_gxu1h"]
+[ext_resource type="AudioStream" uid="uid://cp5odytv0wdwp" path="res://Assets/IndoorSound.mp3" id="23_e3va4"]
+[ext_resource type="AudioStream" uid="uid://ywwuqskco04" path="res://Assets/ForestSounds.mp3" id="24_2pd58"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_bk5hw"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -241,6 +243,8 @@ radius = 288.298
 script = ExtResource("21_cqq77")
 radius = 128.515
 
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_pann8"]
+
 [sub_resource type="Curve" id="Curve_e13jt"]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.212308, 0.992083), 0.0, 0.0, 0, 0, Vector2(0.956923, 0.0261877), 0.0, 0.0, 0, 0]
 point_count = 3
@@ -258,6 +262,9 @@ scale_min = 0.2
 scale_curve = SubResource("CurveTexture_2x2rr")
 
 [sub_resource type="SphereMesh" id="SphereMesh_7340b"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_gcuwi"]
+size = Vector3(1.04297, 0.620361, 1)
 
 [node name="Volcano" type="Node3D"]
 
@@ -342,6 +349,13 @@ shape = SubResource("Resource_spvet")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -61.9632, 55.5107, 338.969)
 script = ExtResource("22_gxu1h")
 
+[node name="CharacterBody3D" type="CharacterBody3D" parent="Camera3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Camera3D/CharacterBody3D"]
+visible = false
+shape = SubResource("CapsuleShape3D_pann8")
+disabled = true
+
 [node name="Snow" type="GPUParticles3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 116.291, 0)
 visible = false
@@ -351,3 +365,20 @@ lifetime = 25.0
 randomness = 0.5
 process_material = SubResource("ParticleProcessMaterial_am06c")
 draw_pass_1 = SubResource("SphereMesh_7340b")
+
+[node name="SoundTracks" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -46.5792, 56.953, 323.683)
+
+[node name="IndoorSound" type="AudioStreamPlayer" parent="SoundTracks"]
+stream = ExtResource("23_e3va4")
+
+[node name="ForestSounds" type="AudioStreamPlayer" parent="SoundTracks"]
+stream = ExtResource("24_2pd58")
+
+[node name="Area3D" type="Area3D" parent="."]
+transform = Transform3D(50, 0, 0, 0, 50, 0, 0, 0, 50, -43.2189, 66.485, 323.683)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("BoxShape3D_gcuwi")
+
+[connection signal="area_entered" from="Area3D" to="Camera3D" method="_on_area_3d_area_entered"]
