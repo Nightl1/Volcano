@@ -1,0 +1,51 @@
+[gd_scene load_steps=7 format=3 uid="uid://bb5pentw75uie"]
+
+[ext_resource type="PackedScene" uid="uid://chvd60u8th4i1" path="res://Scene/uploads_files_3406095_woodenhouse.gltf" id="2_y2mpr"]
+[ext_resource type="PackedScene" uid="uid://60wrkl53nawt" path="res://Assets/Mirroir2/ornate_mirror_01_1k.gltf" id="3_ibbrr"]
+[ext_resource type="PackedScene" uid="uid://bwk534rhdtad0" path="res://Assets/Light2/scene.gltf" id="4_cb5qb"]
+[ext_resource type="PackedScene" uid="uid://disnwap7c74ii" path="res://Assets/Light1/modern_ceiling_lamp_01_1k.gltf" id="5_efkyw"]
+[ext_resource type="Script" path="res://free_look_camera.gd" id="62_h6ow4"]
+
+[sub_resource type="Environment" id="Environment_asabk"]
+tonemap_mode = 2
+sdfgi_enabled = true
+sdfgi_read_sky_light = false
+glow_enabled = true
+glow_normalized = true
+glow_blend_mode = 0
+fog_enabled = true
+fog_light_color = Color(0.681551, 0.710747, 0.756622, 1)
+fog_light_energy = 0.31
+fog_sun_scatter = 0.3
+volumetric_fog_density = 0.4921
+
+[node name="Indoor" type="Node3D"]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.19398, 1.67766, 8.00955)
+script = ExtResource("62_h6ow4")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.26279, 2.84422, -9.09274)
+light_energy = 0.3
+light_size = 1.0
+shadow_enabled = true
+shadow_bias = 0.2
+distance_fade_enabled = true
+omni_range = 1.17241
+omni_attenuation = 2.0
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_asabk")
+
+[node name="uploads_files_3406095_woodenhouse" parent="." instance=ExtResource("2_y2mpr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0715652, 0, 7.3683)
+
+[node name="Mirroir" parent="." instance=ExtResource("3_ibbrr")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.619954, 2.38041, -1.49971)
+
+[node name="GlowStone" parent="." instance=ExtResource("4_cb5qb")]
+transform = Transform3D(0.01, 0, 0, 0, 0.01, 0, 0, 0, 0.01, 0, 0.834679, 2.25052)
+
+[node name="Ceiling_Light" parent="." instance=ExtResource("5_efkyw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0147775, 5.45133, -1.06698)
