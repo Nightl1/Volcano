@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://60wrkl53nawt"
-path="res://.godot/imported/ornate_mirror_01_1k.gltf-70e72e6d8f3899bea96644f227a7b402.scn"
+uid="uid://bvfi2r5nlrhay"
+path="res://.godot/imported/scene.gltf-7b45297cba1a21d8220cc975bd2929e2.scn"
 
 [deps]
 
-source_file="res://Assets/Mirroir2/ornate_mirror_01_1k.gltf"
-dest_files=["res://.godot/imported/ornate_mirror_01_1k.gltf-70e72e6d8f3899bea96644f227a7b402.scn"]
+source_file="res://Assets/forest_cabin/scene.gltf"
+dest_files=["res://.godot/imported/scene.gltf-7b45297cba1a21d8220cc975bd2929e2.scn"]
 
 [params]
 

@@ -12,7 +12,7 @@ dest_files=["res://.godot/imported/IndoorSound.mp3-3497fe4fb085de6d7a8ff1a909fbd
 
 [params]
 
-loop=false
+loop=true
 loop_offset=0
 bpm=0
 beat_count=0

@@ -2,26 +2,27 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cn1drf6caxjb7"
-path="res://.godot/imported/ornate_mirror_01_diff_1k.png-c4d2e1e76284d8873880d628a1a0949e.ctex"
+uid="uid://2jywh8qgk87k"
+path.s3tc="res://.godot/imported/Concrete_baseColor.jpeg-6a930830eda02fc9c8e9d246d7031915.s3tc.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
 }
 
 [deps]
 
-source_file="res://Assets/Mirroir2/textures/ornate_mirror_01_diff_1k.png"
-dest_files=["res://.godot/imported/ornate_mirror_01_diff_1k.png-c4d2e1e76284d8873880d628a1a0949e.ctex"]
+source_file="res://Assets/forest_cabin/textures/Concrete_baseColor.jpeg"
+dest_files=["res://.godot/imported/Concrete_baseColor.jpeg-6a930830eda02fc9c8e9d246d7031915.s3tc.ctex"]
 
 [params]
 
-compress/mode=0
+compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=false
+mipmaps/generate=true
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""
@@ -31,4 +32,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=1
+detect_3d/compress_to=0

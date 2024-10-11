@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dskl7accnyn2f"
-path.s3tc="res://.godot/imported/ornate_mirror_01_nor_gl_1k.jpg-35e4644c7d4a613b74cb32071c8b5b94.s3tc.ctex"
+uid="uid://bj8vfhqe7176"
+path.s3tc="res://.godot/imported/Flooring__Tile_300x300_baseColor.jpeg-54947d0885ab8f3a942d4d0acff82aa5.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Assets/Mirroir2/textures/ornate_mirror_01_nor_gl_1k.jpg"
-dest_files=["res://.godot/imported/ornate_mirror_01_nor_gl_1k.jpg-35e4644c7d4a613b74cb32071c8b5b94.s3tc.ctex"]
+source_file="res://Assets/textures/Flooring__Tile_300x300_baseColor.jpeg"
+dest_files=["res://.godot/imported/Flooring__Tile_300x300_baseColor.jpeg-54947d0885ab8f3a942d4d0acff82aa5.s3tc.ctex"]
 
 [params]
 
@@ -20,12 +20,12 @@ compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
-compress/normal_map=1
+compress/normal_map=0
 compress/channel_pack=0
 mipmaps/generate=true
 mipmaps/limit=-1
-roughness/mode=1
-roughness/src_normal="res://Assets/Mirroir2/textures/ornate_mirror_01_nor_gl_1k.jpg"
+roughness/mode=0
+roughness/src_normal=""
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/normal_map_invert_y=false
