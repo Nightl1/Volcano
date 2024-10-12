@@ -11,6 +11,12 @@ extends Camera3D
 
 @onready var _velocity = default_velocity
 
+@onready var house_area: Area3D = $"../Indoor/houseArea"
+@onready var area_3d: Area3D = $Area3D
+@onready var indoor: AudioStreamPlayer = $"../Audio/Indoor"
+@onready var outdoor: AudioStreamPlayer = $"../Audio/Outdoor"
+@onready var character_body_3d: CharacterBody3D = $CharacterBody3D
+
 func _input(event):
 	if not current:
 		return
@@ -44,3 +50,23 @@ func _process(delta):
 		translate(direction * _velocity * delta * boost_speed_multiplier)
 	else:
 		translate(direction * _velocity * delta)
+
+
+#func _on_area_3d_area_entered(area: Area3D) -> void:
+	#if(area == house_area):
+		#AudioServer.set_bus_mute(1,1)
+		#AudioServer.set_bus_mute(2,0)
+#
+#
+#func _on_area_3d_area_exited(area: Area3D) -> void:
+	#if(area == house_area):
+		#AudioServer.set_bus_mute(2,1)
+		#AudioServer.set_bus_mute(1,0)
+
+func _on_house_area_body_entered(body: Node3D) -> void:
+	if body is CharacterBody3D:
+		print("Character has entered the house area.")
+		indoor.play()  
+		outdoor.stop()
+	else:
+		print("Some other body entered.")

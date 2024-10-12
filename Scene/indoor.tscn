@@ -1,4 +1,4 @@
-[gd_scene load_steps=148 format=4 uid="uid://bb5pentw75uie"]
+[gd_scene load_steps=146 format=4 uid="uid://bd7itcv6vljic"]
 
 [ext_resource type="Texture2D" uid="uid://bl7ade1ojxjfh" path="res://Assets/forest_cabin/textures/Flooring__Tile_300x300_baseColor.jpeg" id="2_s5g6c"]
 [ext_resource type="Texture2D" uid="uid://bc12y1oybu1ok" path="res://Assets/forest_cabin/textures/Textile_baseColor.jpeg" id="3_arm78"]
@@ -9,20 +9,6 @@
 [ext_resource type="Texture2D" uid="uid://uly20ihep3kp" path="res://Assets/forest_cabin/textures/Decking_100mm_baseColor.jpeg" id="6_3bsdy"]
 [ext_resource type="Texture2D" uid="uid://c73wrb64eidci" path="res://Assets/Light2/textures/Redstone-lamp_baseColor.jpeg" id="7_wv20i"]
 [ext_resource type="AudioStream" uid="uid://cp5odytv0wdwp" path="res://Assets/IndoorSound.mp3" id="10_7owys"]
-[ext_resource type="Script" path="res://free_look_camera.gd" id="62_h6ow4"]
-
-[sub_resource type="Environment" id="Environment_asabk"]
-tonemap_mode = 2
-sdfgi_enabled = true
-sdfgi_read_sky_light = false
-glow_enabled = true
-glow_normalized = true
-glow_blend_mode = 0
-fog_enabled = true
-fog_light_color = Color(0.681551, 0.710747, 0.756622, 1)
-fog_light_energy = 0.31
-fog_sun_scatter = 0.3
-volumetric_fog_density = 0.4921
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tg5tr"]
 resource_name = "Acrylic"
@@ -1851,10 +1837,6 @@ shadow_mesh = SubResource("ArrayMesh_58mn1")
 
 [node name="Indoor" type="Node3D"]
 
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.19398, 1.67766, 8.00955)
-script = ExtResource("62_h6ow4")
-
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.26279, 2.84422, -9.09274)
 light_energy = 0.3
@@ -1864,9 +1846,6 @@ shadow_bias = 0.2
 distance_fade_enabled = true
 omni_range = 1.17241
 omni_attenuation = 2.0
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_asabk")
 
 [node name="Cabin" type="Node3D" parent="."]
 transform = Transform3D(0.001, 0, 0, 0, -0.001, -8.74228e-11, 0, 8.74228e-11, -0.001, -12.7036, 3.29269, 14.3291)
@@ -2094,7 +2073,7 @@ light_energy = 0.5
 shadow_enabled = true
 shadow_normal_bias = 10.0
 shadow_blur = 3.952
-omni_range = 0.571753
+omni_range = 3.0
 
 [node name="NightLight2" type="OmniLight3D" parent="BedLights"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.15847)
@@ -2103,7 +2082,7 @@ light_energy = 0.5
 shadow_enabled = true
 shadow_normal_bias = 10.0
 shadow_blur = 3.952
-omni_range = 0.571753
+omni_range = 3.0
 
 [node name="CeilingLight" parent="." instance=ExtResource("5_efkyw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.45493, 1.88119, 0)
@@ -2115,11 +2094,12 @@ light_energy = 3.0
 shadow_enabled = true
 shadow_normal_bias = 10.0
 shadow_blur = 3.952
-omni_range = 2.6683
+omni_range = 8.0
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("10_7owys")
 autoplay = true
+max_distance = 30.0
 
 [editable path="GlowStone"]
 [editable path="CeilingLight"]

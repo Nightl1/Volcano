@@ -1,0 +1,26 @@
+[gd_scene load_steps=2 format=3 uid="uid://c8sgrnlcxx7c0"]
+
+[ext_resource type="Script" path="res://Scripts/performance_tracker.gd" id="1_pfnrt"]
+
+[node name="PerformanceTracker" type="VBoxContainer"]
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_pfnrt")
+
+[node name="FPS" type="Label" parent="."]
+layout_mode = 2
+
+[node name="Primitive" type="Label" parent="."]
+layout_mode = 2
+
+[node name="Drawcalls" type="Label" parent="."]
+layout_mode = 2
+
+[node name="Collisionpoints" type="Label" parent="."]
+layout_mode = 2
+
+[node name="Nodecount" type="Label" parent="."]
+layout_mode = 2
+
+[node name="LightCount" type="Label" parent="."]
+layout_mode = 2

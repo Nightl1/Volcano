@@ -1,4 +1,4 @@
-[gd_scene load_steps=61 format=3 uid="uid://ci4cj8ocwjcb"]
+[gd_scene load_steps=62 format=3 uid="uid://ci4cj8ocwjcb"]
 
 [ext_resource type="Terrain3DStorage" uid="uid://d21o6dlcnqwju" path="res://Resource/TerrainResource.res" id="1_ulxvh"]
 [ext_resource type="Texture2D" uid="uid://sbjl58epg6ys" path="res://Resource/grass_albedo_height.png" id="2_w44t0"]
@@ -22,8 +22,9 @@
 [ext_resource type="Script" path="res://addons/proton_scatter/src/scatter_shape.gd" id="20_d3ws4"]
 [ext_resource type="Script" path="res://addons/proton_scatter/src/shapes/sphere_shape.gd" id="21_cqq77"]
 [ext_resource type="Script" path="res://free_look_camera.gd" id="22_gxu1h"]
-[ext_resource type="AudioStream" uid="uid://cp5odytv0wdwp" path="res://Assets/IndoorSound.mp3" id="23_e3va4"]
 [ext_resource type="AudioStream" uid="uid://ywwuqskco04" path="res://Assets/ForestSounds.mp3" id="24_2pd58"]
+[ext_resource type="PackedScene" uid="uid://bd7itcv6vljic" path="res://Scene/indoor.tscn" id="25_amcw4"]
+[ext_resource type="PackedScene" uid="uid://c8sgrnlcxx7c0" path="res://Scene/performance_tracker.tscn" id="25_f527x"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_bk5hw"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -131,7 +132,7 @@ normal_texture = ExtResource("11_yobqk")
 mesh_list = Array[Terrain3DMeshAsset]([SubResource("Terrain3DMeshAsset_tv122")])
 texture_list = Array[Terrain3DTextureAsset]([SubResource("Terrain3DTextureAsset_ujjg8"), SubResource("Terrain3DTextureAsset_7js4b"), SubResource("Terrain3DTextureAsset_ln1ri"), SubResource("Terrain3DTextureAsset_xt572"), SubResource("Terrain3DTextureAsset_ibkck")])
 
-[sub_resource type="Resource" id="Resource_jf601"]
+[sub_resource type="Resource" id="Resource_xoool"]
 script = ExtResource("15_kcedq")
 amount = 500
 enabled = true
@@ -140,7 +141,7 @@ custom_seed = 0
 restrict_height = true
 reference_frame = 1
 
-[sub_resource type="Resource" id="Resource_5wi12"]
+[sub_resource type="Resource" id="Resource_gu24w"]
 script = ExtResource("16_p1ffw")
 position = Vector3(0.15, 0.15, 0.15)
 rotation = Vector3(20, 360, 20)
@@ -151,7 +152,7 @@ custom_seed = 0
 restrict_height = false
 reference_frame = 2
 
-[sub_resource type="Resource" id="Resource_5s2u3"]
+[sub_resource type="Resource" id="Resource_8yilc"]
 script = ExtResource("17_co5vp")
 iterations = 3
 offset_step = 0.2
@@ -163,7 +164,7 @@ custom_seed = 0
 restrict_height = true
 reference_frame = 0
 
-[sub_resource type="Resource" id="Resource_c1v5v"]
+[sub_resource type="Resource" id="Resource_fd7sa"]
 script = ExtResource("18_ofieb")
 terrain_node = NodePath("../Terrain3D")
 align_with_collision_normal = false
@@ -173,9 +174,9 @@ custom_seed = 0
 restrict_height = false
 reference_frame = 0
 
-[sub_resource type="Resource" id="Resource_pguq5"]
+[sub_resource type="Resource" id="Resource_1mill"]
 script = ExtResource("13_qc28l")
-stack = Array[ExtResource("14_11q3k")]([SubResource("Resource_jf601"), SubResource("Resource_5wi12"), SubResource("Resource_5s2u3"), SubResource("Resource_c1v5v")])
+stack = Array[ExtResource("14_11q3k")]([SubResource("Resource_xoool"), SubResource("Resource_gu24w"), SubResource("Resource_8yilc"), SubResource("Resource_fd7sa")])
 
 [sub_resource type="Resource" id="Resource_g8bsm"]
 script = ExtResource("21_cqq77")
@@ -185,7 +186,7 @@ radius = 400.0
 script = ExtResource("21_cqq77")
 radius = 90.6853
 
-[sub_resource type="Resource" id="Resource_48tfq"]
+[sub_resource type="Resource" id="Resource_ubgtu"]
 script = ExtResource("15_kcedq")
 amount = 500
 enabled = true
@@ -194,7 +195,7 @@ custom_seed = 0
 restrict_height = true
 reference_frame = 1
 
-[sub_resource type="Resource" id="Resource_ycsd8"]
+[sub_resource type="Resource" id="Resource_jhv2a"]
 script = ExtResource("16_p1ffw")
 position = Vector3(0.15, 0.15, 0.15)
 rotation = Vector3(20, 360, 20)
@@ -205,7 +206,7 @@ custom_seed = 0
 restrict_height = false
 reference_frame = 2
 
-[sub_resource type="Resource" id="Resource_8dmm5"]
+[sub_resource type="Resource" id="Resource_o75ai"]
 script = ExtResource("17_co5vp")
 iterations = 3
 offset_step = 0.2
@@ -217,7 +218,7 @@ custom_seed = 0
 restrict_height = true
 reference_frame = 0
 
-[sub_resource type="Resource" id="Resource_rluy0"]
+[sub_resource type="Resource" id="Resource_trhly"]
 script = ExtResource("18_ofieb")
 terrain_node = NodePath("../Terrain3D")
 align_with_collision_normal = false
@@ -227,9 +228,9 @@ custom_seed = 0
 restrict_height = false
 reference_frame = 0
 
-[sub_resource type="Resource" id="Resource_idwvg"]
+[sub_resource type="Resource" id="Resource_momc1"]
 script = ExtResource("13_qc28l")
-stack = Array[ExtResource("14_11q3k")]([SubResource("Resource_48tfq"), SubResource("Resource_ycsd8"), SubResource("Resource_8dmm5"), SubResource("Resource_rluy0")])
+stack = Array[ExtResource("14_11q3k")]([SubResource("Resource_ubgtu"), SubResource("Resource_jhv2a"), SubResource("Resource_o75ai"), SubResource("Resource_trhly")])
 
 [sub_resource type="Resource" id="Resource_ofss3"]
 script = ExtResource("21_cqq77")
@@ -243,7 +244,7 @@ radius = 288.298
 script = ExtResource("21_cqq77")
 radius = 128.515
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_pann8"]
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_xo026"]
 
 [sub_resource type="Curve" id="Curve_e13jt"]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.212308, 0.992083), 0.0, 0.0, 0, 0, Vector2(0.956923, 0.0261877), 0.0, 0.0, 0, 0]
@@ -254,17 +255,18 @@ curve = SubResource("Curve_e13jt")
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_am06c"]
 emission_shape = 3
-emission_box_extents = Vector3(1000, 0, 1000)
+emission_box_extents = Vector3(30, 0, 10)
 angular_velocity_min = 3.99998
 angular_velocity_max = 3.99998
 gravity = Vector3(0, -1, 0)
-scale_min = 0.2
+scale_min = 0.01
+scale_max = 0.3
 scale_curve = SubResource("CurveTexture_2x2rr")
 
 [sub_resource type="SphereMesh" id="SphereMesh_7340b"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_gcuwi"]
-size = Vector3(1.04297, 0.620361, 1)
+[sub_resource type="BoxShape3D" id="BoxShape3D_rd3oy"]
+size = Vector3(11.5742, 2.70404, 7.37488)
 
 [node name="Volcano" type="Node3D"]
 
@@ -284,7 +286,7 @@ assets = SubResource("Terrain3DAssets_cnmdp")
 [node name="Bushes" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 27.2286, 0)
 script = ExtResource("12_dlnn5")
-modifier_stack = SubResource("Resource_pguq5")
+modifier_stack = SubResource("Resource_1mill")
 Performance/use_chunks = true
 Performance/chunk_dimensions = Vector3(15, 15, 15)
 
@@ -313,7 +315,7 @@ shape = SubResource("Resource_ikpbk")
 [node name="Trees" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 27.2286, 0)
 script = ExtResource("12_dlnn5")
-modifier_stack = SubResource("Resource_idwvg")
+modifier_stack = SubResource("Resource_momc1")
 Performance/use_chunks = true
 Performance/chunk_dimensions = Vector3(15, 15, 15)
 
@@ -346,39 +348,38 @@ negative = true
 shape = SubResource("Resource_spvet")
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -61.9632, 55.5107, 338.969)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34.6999, 53.0694, 348.58)
 script = ExtResource("22_gxu1h")
 
 [node name="CharacterBody3D" type="CharacterBody3D" parent="Camera3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.66)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Camera3D/CharacterBody3D"]
-visible = false
-shape = SubResource("CapsuleShape3D_pann8")
+shape = SubResource("CapsuleShape3D_xo026")
 disabled = true
 
-[node name="Snow" type="GPUParticles3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 116.291, 0)
-visible = false
+[node name="Snow" type="GPUParticles3D" parent="Camera3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9.35011, 0)
 cast_shadow = 0
-amount = 100000
-lifetime = 25.0
+amount = 100
+lifetime = 10.0
 randomness = 0.5
 process_material = SubResource("ParticleProcessMaterial_am06c")
 draw_pass_1 = SubResource("SphereMesh_7340b")
 
-[node name="SoundTracks" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -46.5792, 56.953, 323.683)
+[node name="Indoor" parent="." instance=ExtResource("25_amcw4")]
+transform = Transform3D(2.5, 0, 0, 0, 2.5, 0, 0, 0, 2.5, -42.1578, 49.7602, 335.69)
 
-[node name="IndoorSound" type="AudioStreamPlayer" parent="SoundTracks"]
-stream = ExtResource("23_e3va4")
+[node name="houseArea" type="Area3D" parent="Indoor"]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 2.39248, 2.21677, 0.461151)
 
-[node name="ForestSounds" type="AudioStreamPlayer" parent="SoundTracks"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Indoor/houseArea"]
+shape = SubResource("BoxShape3D_rd3oy")
+
+[node name="Audio" type="Node3D" parent="."]
+
+[node name="Outdoor" type="AudioStreamPlayer" parent="Audio"]
 stream = ExtResource("24_2pd58")
+autoplay = true
 
-[node name="Area3D" type="Area3D" parent="."]
-transform = Transform3D(50, 0, 0, 0, 50, 0, 0, 0, 50, -43.2189, 66.485, 323.683)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
-shape = SubResource("BoxShape3D_gcuwi")
-
-[connection signal="area_entered" from="Area3D" to="Camera3D" method="_on_area_3d_area_entered"]
+[node name="PerformanceTracker" parent="." instance=ExtResource("25_f527x")]

@@ -12,7 +12,7 @@ dest_files=["res://.godot/imported/ForestSounds.mp3-86f00191d7f6462565f200e03459
 
 [params]
 
-loop=false
+loop=true
 loop_offset=0
 bpm=0
 beat_count=0
